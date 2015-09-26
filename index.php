@@ -41,6 +41,6 @@ $zorca = new \Zorca\Zorca();
 
 /**
  * [en] Run CMS engine
- * [ru] запускаем движок CMS
+ * [ru] Запускаем движок CMS
  **/
 $zorca->run();
