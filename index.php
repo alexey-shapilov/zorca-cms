@@ -1,32 +1,26 @@
 <?php
 /**
- * @todo Сделать режимы запуска: development, production
- */
-// Проверяем версию PHP
-if (version_compare($ver = PHP_VERSION, $req = '5.4.0', '<')) {
-    throw new \RuntimeException(sprintf('Вы используете PHP %s, но системе Zorca CMS для запуска требуется PHP %s.', $ver, $req));
-}
-
-// Устанавливаем timezone в значение по-умолчанию, на случай, если значение не установлено в php.ini сервера
-date_default_timezone_set(@date_default_timezone_get());
-
-// Определяем базовую папку сервера
+ * [en] Define directory separator
+ * [ru] Устанавливаем разделительный знак для путей
+ **/
 define('DS', '/');
+/**
+ * [en] Define the path to the root directory, including the slash at the end
+ * [ru] Устанавливаем корневую папку сервера со слешем в конце
+ **/
 define('BASE', str_replace(DIRECTORY_SEPARATOR, DS, __DIR__ . DS));
-
-// Устанавливаем папки для приложения, базы данных и паблика
+/**
+ * [en] Define the path to the main app directory, including the slash at the end
+ * [ru] Устанавливаем основную папку CMS
+ **/
 define('APP', BASE . 'app' . DS);
+/**
+ * [en] Define the path to the config & database directory, including the slash at the end
+ * [ru] Устанавливаем папку для хранения конфигурации и базы данных CMS
+ **/
 define('DATA', BASE . 'data' . DS);
+/**
+ * [en] Define the path to the public assets directory, including the slash at the end
+ * [ru] Устанавливаем публичную папку для хранения картинок, стилей и скриптов, показываемых клиенту
+ **/
 define('PUB', BASE . 'pub' . DS);
-
-// Проверяем, установлены ли необходимые библиотеки
-$autoload = __DIR__ . '/vendor/autoload.php';
-if (!is_file($autoload)) {
-    throw new \RuntimeException('Не установлены внешние библиотеки. Запустите команду composer install');
-}
-
-// Подгружаем библиотеки
-require_once $autoload;
-
-// Запускаем движок
-$zorca = new Zorca\Zorca();
