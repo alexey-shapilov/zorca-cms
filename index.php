@@ -1,4 +1,5 @@
 <?php
+
 /**
  * [en] Define directory separator
  * [ru] Устанавливаем разделительный знак для путей
@@ -24,3 +25,22 @@ define('DATA', BASE . 'data' . DS);
  * [ru] Устанавливаем публичную папку для хранения картинок, стилей и скриптов, показываемых клиенту
  **/
 define('PUB', BASE . 'pub' . DS);
+
+/**
+ * [en] Register Composer autoloader
+ * [ru] Подключаем автозагрузчик Composer
+ **/
+$autoload = BASE . 'vendor/autoload.php';
+require_once $autoload;
+
+/**
+ * [en] Create main CMS object
+ * [ru] Создаем основной объект CMS
+ **/
+$zorca = new \Zorca\Zorca();
+
+/**
+ * [en] Run CMS engine
+ * [ru] запускаем движок CMS
+ **/
+$zorca->run();
