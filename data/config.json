@@ -1,10 +1,10 @@
 {
-  "offline": false,
-  "mode": "development",
-  "palette": "default",
-  "skeleton": "default",
-  "theme": "default",
-  "paletteAdmin": "default",
-  "skeletonAdmin": "default",
-  "themeAdmin": "default"
+  "zorca.offline": false,
+  "zorca.mode": "development",
+  "zorca.palette": "default",
+  "zorca.skeleton": "default",
+  "zorca.theme": "default",
+  "zorca.paletteAdmin": "default",
+  "zorca.skeletonAdmin": "default",
+  "zorca.themeAdmin": "default"
 }

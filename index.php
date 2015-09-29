@@ -38,6 +38,8 @@ require_once $autoload;
  * [ru] Создаем основной объект CMS
  **/
 $zorca = new \Zorca\Zorca();
+use Zorca\Routes;
+Routes::get();
 
 /**
  * [en] Run CMS engine

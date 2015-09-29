@@ -1,11 +1,16 @@
 <?php
+
 namespace Zorca;
 
-use Symfony\Component\Routing;
+use Zorca\Database;
+/**
+ * Class Routes
+ *
+ * @package Zorca
+ */
 class Routes {
-    static function load() {
-        $routes = new Routing\RouteCollection();
-        $routesConfig = Config::load('ext');
+    static function get() {
+        $routesConfig =
         foreach ($routesConfig as $routesConfigItem) {
             if ($routesConfigItem['extType'] === 'component') $routes->add($routesConfigItem['extKey'], new Routing\Route($routesConfigItem['extSlug'] . '/{extAction}', ['extAction'=> 'index'], ['extAction'=> '^[a-z0-9-]+']));
         }
